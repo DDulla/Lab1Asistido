@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShapePanel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public Image shapeDisplay;
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateShape(ColorShapeData shapeData)
     {
-        
+        shapeDisplay.sprite = shapeData.sprite;
     }
 }
+

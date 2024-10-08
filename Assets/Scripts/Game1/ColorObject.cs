@@ -4,15 +4,18 @@ using UnityEngine;
 
 public class ColorObject : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public ColorShapeData colorData;
 
-    // Update is called once per frame
-    void Update()
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        
+        if (other.CompareTag("Player"))
+        {
+            PlayerColorShapeController playerController = other.GetComponent<PlayerColorShapeController>();
+            if (playerController != null)
+            {
+                playerController.ChangeColor(colorData);
+            }
+        }
     }
 }
+
